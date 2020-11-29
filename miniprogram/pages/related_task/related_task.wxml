@@ -1,0 +1,14 @@
+<!--miniprogram/pages/related_task/related_task.wxml-->
+<view class="Container">
+  <search></search>
+  <scroll-view scroll-y class="related_taskContainer" >
+    <view class="related_task">
+      <!-- 限制词量问题 -->
+      <text class="task_name">任务名</text>
+      <text class="iconfont icon-xingzhuangjiehe" wx:if="{{isSelected}}" bindtap="isSelect"></text>
+      <text class="iconfont icon-xuanzhong1" wx:if="{{!isSelected}}" bindtap="isNotSelect"></text>
+    </view>
+  </scroll-view>
+  <button class="canel" bindtap="canel">取消</button>
+  <button class="sure" bindtap="sure">确定</button>
+</view>

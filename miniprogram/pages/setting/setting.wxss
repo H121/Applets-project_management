@@ -1,0 +1,23 @@
+/* miniprogram/pages/setting/setting.wxss */
+.userInfo{
+   height:150rpx;
+  border:1px #b4b5b6 solid;
+  border-left:none; 
+  border-right:none;
+  display:flex;
+  align-items: center;
+}
+.userInfo image{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.userInfo text{
+  margin-left:30rpx;
+}
+.userInfo button{
+  margin:0; 
+  margin-left:10rpx;
+}
+  

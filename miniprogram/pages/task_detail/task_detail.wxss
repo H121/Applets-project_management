@@ -1,0 +1,96 @@
+/* miniprogram/pages/task_detail/task_detail.wxss */
+@import "/static/weui/weui.wxss";
+
+/* 基本信息 */
+.project_container{
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
+}
+.project_title{
+  height: 100rpx;
+  width: 100%;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.symbol{
+  position: absolute;
+  right: 0;
+  width: 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: right;
+  background: white;
+  color: #e5e5e5;
+}
+.project_progress,
+.principal,
+.participant,
+.Sharer,
+.start_time,
+.ending_time,
+.project_attachment,
+.project_remind,
+.type,
+.emergency,
+.project,
+.public_label,
+.mylabel,
+.related_tasks,
+.subtasks,
+.founder,
+.creation_time{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  position: relative;
+}
+.principal .name,
+.participant .name,
+.Sharer .name,
+.start_time .time,
+.ending_time .time,
+.project_attachment .attachment,
+.project_remind .remind,
+.type .name,
+.emergency .name,
+.project .name,
+.public_label .name,
+.mylabel .name,
+.related_tasks .name,
+.subtasks .name,
+.founder .name,
+.creation_time .time{
+  display: inline;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+  text-align: right;
+  margin-right: 20rpx;
+  color: #e5e5e5;
+}
+.basic_information,
+.creation_message{
+  display: block;
+  color: #e5e5e5;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  background: #f8f8f8;
+}
+.project_progress .progress{
+  width: 100%;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+  text-align: right;
+}
+.start_time .time,
+.ending_time .time{
+  width: 300rpx;
+}

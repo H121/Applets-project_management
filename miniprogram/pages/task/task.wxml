@@ -1,0 +1,100 @@
+<!--miniprogram/pages/task/task.wxml-->
+<view class="Container">
+  <!-- 顶部搜索框 -->
+  <search>
+    <view class="animation-button select_button" bindtap="translate">筛选</view>
+  <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-element" animation="{{animation}}">
+      <view class='use'>
+        <view class='iconuse'>类型</view>
+        <ul class="useage">
+          <li class="{{currentTab==0 ? 'active' : ''}}" bindtap="tryDriver" data-message="我的任务" data-index="0">我的任务</li>
+          <li class="{{currentTab==1 ? 'active' : ''}}" bindtap="tryDriver" data-message="负责的"  data-index="1">负责的</li>
+          <li class="{{currentTab==2 ? 'active' : ''}}" bindtap="tryDriver" data-message="参与的" data-index="2">参与的</li>
+          <li class="{{currentTab==3 ? 'active' : ''}}" bindtap="tryDriver" data-message="创建的" data-index="3">创建的</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{currentTab==4 ? 'active' : ''}}" bindtap="tryDriver" data-message="未读的" data-index="4">未读的</li>
+          <li class="{{currentTab==5 ? 'active' : ''}}" bindtap="tryDriver" data-message="新反馈的" data-index="5">新反馈的</li>
+          <li class="{{currentTab==6 ? 'active' : ''}}" bindtap="tryDriver" data-message="关注的" data-index="6">关注的</li>
+          <li class="{{currentTab==7 ? 'active' : ''}}" bindtap="tryDriver" data-message="下属的" data-index="7">下属的</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{currentTab==8 ? 'active' : ''}}" bindtap="tryDriver" data-message="共享给我的" data-index="8">共享给我的</li>
+          <li class="{{currentTab==9 ? 'active' : ''}}" bindtap="tryDriver" data-message="已完成" data-index="9">已完成</li>
+          <li class="{{currentTab==10 ? 'active' : ''}}" bindtap="tryDriver" data-message="全部" data-index="10">全部</li>
+          <li class="{{currentTab==11 ? 'active' : ''}}" bindtap="tryDriver" data-message="特批任务" data-index="11">特批任务</li>
+        </ul>
+      </view>
+    <view class="use">
+      <view class='iconuse'>
+        <text>反馈时间</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>创建人或负责人</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>所属项目</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>关联项目</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>标签</text>
+        <text class="symbol">></text>
+      </view>
+    </view>
+      <view class='use'>
+        <view class='iconprice'>排序</view>
+        <ul class="useage">
+          <li class="{{selectTab==0 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="默认" data-bar_index="0" >默认</li>
+          <li class="{{selectTab==1 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="反馈时间" data-bar_index="1" >反馈时间</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{selectTab==2 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="更新时间" data-bar_index="2" >更新时间</li>
+          <li class="{{selectTab==3 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="创建时间(最新)" data-bar_index="3" >创建时间(最新)</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{selectTab==4 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="创建时间(最早)" data-bar_index="4" >创建时间(最早)</li>
+          <li class="{{selectTab==5 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="结束时间(最新)" data-bar_index="5" >结束时间(最新)</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{selectTab==6 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="结束时间(最早)" data-bar_index="6" >结束时间(最早)</li>
+          <li class="{{selectTab==7 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="负责人" data-bar_index="7" >负责人</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{selectTab==8 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="紧急程度" data-bar_index="8" >紧急程度</li>
+          <li class="{{selectTab==9 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="任务类型" data-bar_index="9" >任务类型</li>
+        </ul>
+      </view>
+      <view class='buttom'>
+      <view class="animation-reset" bindtap="reset" >重置</view>
+      <view class="animation-button" bindtap="success">完成</view>
+      </view>
+    </view>
+  </view>
+  </search>
+   <!-- 项目展示 -->
+  <scroll-view scroll-y class="projectContainer" >
+    <view class="item-list" wx:for="{{task}}" wx:for-item="item" wx:for-index="index" wx:key="that" >
+        <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" bindtap="toTaskDetail">
+            <image class="info-img" src="{{item.avatarUrl ? item.avatarUrl : '/static/images/nvsheng.jpg'}}"></image>
+            <view class="info-wrapper">
+                <view class="info-desc">
+                    <view class="name">{{item.name}}</view>
+                    <view class="time">{{item.time}}</view>
+                </view>
+                <view class="info-content">{{item.author}} {{item.progress}}</view>
+            </view>
+        </view>
+        <view class="item-oper">
+            <view class="oper-delete" bindtap="itemDelete" data-index="{{index}}">删除</view>
+        </view>
+    </view>
+  </scroll-view>
+  <button class="bottom_button" bindtap="add_task">+</button>
+</view>

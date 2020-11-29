@@ -1,0 +1,105 @@
+<!--miniprogram/pages/task_detail/task_detail.wxml-->
+<view class="project_container">
+  <view class="project_title">
+    <text>任务标题</text>
+    <text>{{project_title}}</text>
+  </view>
+  <text class="basic_information">基本信息</text>
+  <view class="principal">
+    <text>负责人:</text>
+    <text class="name">{{principal}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="ending_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindEndingTimeChange">
+      <text>到期日:</text>
+      <text class="time">{{ending_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+     <view class="emergency">
+    <text>紧急程度:</text>
+    <text class="name">{{emergency}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="participant">
+    <text>参与人:</text>
+    <text class="name">{{participant}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="project_progress" >
+    <progress_bar id="progress" class="progress" currentProgress="{{ currentProgress }}" maxProgress="100" canSlide="{{canSlide}}"></progress_bar>
+  </view>
+  <view style="height:{{height}};background: #ffffff;"  bindtap="toEditor">
+    <text>无内容，点击这里可以添加任务详情</text>
+    <wxParse id="wxParse" nodes="{{ html }}" wx:if="{{!toHtml}}" />
+  </view>
+  <view class="Sharer">
+    <text>共享人:</text>
+    <text class="name">{{Sharer}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="start_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindStartTimeChange">
+      <text>起始日:</text>
+      <text class="time">{{start_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+  <view class="project_attachment">
+    <text>上传附件</text>
+    <text class="attachment">{{attachment}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="type">
+    <text>任务类型:</text>
+    <text class="name">{{type}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="project_remind">
+    <text>提醒:</text>
+    <text class="remind">{{remind}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="project">
+    <text>所属项目</text>
+    <text class="name">{{project}}</text>
+    <text class="symbol">></text>
+  </view>
+
+  <view class="type">
+    <text>任务类型:</text>
+    <text class="name">{{type}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="public_label">
+    <text>公共标签:</text>
+    <text class="name">{{public_label}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="mylabel">
+    <text>我的标签:</text>
+    <text class="name">{{mylabel}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="related_tasks">
+    <text>关联任务:</text>
+    <text class="name">{{related_tasks}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="subtasks">
+    <text>子任务:</text>
+    <text class="name">{{subtasks}}</text>
+    <text class="symbol">></text>
+  </view>
+  <text class="creation_message">创建信息</text>
+  <view class="founder">
+    <text>创建人:</text>
+    <text class="name">{{founder}}</text>
+  </view>
+  <view class="creation_time">
+    <text>创建时间:</text>
+    <text class="time">{{creation_time}}</text>
+  </view>
+  <button bindtap="toTaskDetail">保存设置</button>
+</view>

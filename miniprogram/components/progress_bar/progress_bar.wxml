@@ -1,0 +1,9 @@
+<!--components/progress_bar/progress_bar.wxml-->
+<view class='progress-root-container'>
+  <text class='text'>进度:</text>
+  <view class='progress-max'></view>
+  <view class='progress-current' style="width:{{2*progress}}rpx"></view>
+  <text class='pencent-text'>{{progressText}}%</text>
+  <image class='slice-button' src='{{slideImg}}' catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd" style="left:{{2*buttonLeft}}rpx"/>
+</view>
+

@@ -1,0 +1,22 @@
+<!--miniprogram/pages/person_selection/person_selection.wxml-->
+<view class="Container">
+  <text class="text">已选1项：</text>
+  <scroll-view scroll-x enable-flex>
+    <view class="selected">
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text class="name">洪子杰</text>
+    </view>
+  </scroll-view>
+  <search></search>
+  <scroll-view scroll-y class="person_selectionContainer" >
+    <view class="person_selection">
+      <!-- 限制词量问题 -->
+      <image src="/static/images/nvsheng.jpg"></image>
+      <text class="person_name">人名</text>
+      <text class="iconfont icon-xingzhuangjiehe" wx:if="{{isSelected}}" bindtap="isSelect"></text>
+      <text class="iconfont icon-xuanzhong1" wx:if="{{!isSelected}}" bindtap="isNotSelect"></text>
+    </view>
+  </scroll-view>
+  <button class="canel" bindtap="canel">取消</button>
+  <button class="sure" bindtap="sure">确定</button>
+</view>

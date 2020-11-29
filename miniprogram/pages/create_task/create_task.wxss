@@ -1,0 +1,102 @@
+/* miniprogram/pages/create_task/create_task.wxss */
+@import "/static/weui/weui.wxss";
+
+/* 基本信息 */
+.project_container{
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
+}
+.project_container .text,
+.project_title text{
+  color: #e5e5e5;
+  font-size: 24rpx;
+}
+.project_title{
+  height: 100rpx;
+  width: 100%;
+  margin-bottom: 30rpx;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project_progress{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  position: relative;
+}
+.project_progress .progress{
+  width: 100%;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+  text-align: right;
+}
+.symbol{
+  position: absolute;
+  right: 0;
+  width: 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: right;
+  background: white;
+  color: #e5e5e5;
+}
+.principal{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  position: relative;
+}
+.principal .name{
+  display: inline;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+  text-align: right;
+  margin-right: 20rpx;
+  color: #e5e5e5;
+}
+.participant,
+.Sharer,
+.start_time,
+.ending_time,
+.project_attachment,
+.project_remind,
+.type,
+.emergency{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  position: relative;
+}
+.participant .name,
+.Sharer .name,
+.start_time .time,
+.ending_time .time,
+.project_attachment .attachment,
+.project_remind .remind,
+.type .name,
+.emergency .name{
+  display: inline;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+  text-align: right;
+  margin-right: 20rpx;
+  color: #e5e5e5;
+}
+.start_time .time,
+.ending_time .time{
+  width: 300rpx;
+}

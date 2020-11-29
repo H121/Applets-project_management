@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "search": "/components/tabBar_search/tabBar_search"
+  },
+  "navigationBarTitleText": "项目",
+  "pageOrientation": "auto"
+}

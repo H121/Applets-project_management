@@ -1,0 +1,54 @@
+/* miniprogram/pages/related_task/related_task.wxss */
+.Container{
+  width: 100%;
+  height: 100%;
+}
+.related_taskContainer{
+  height: calc(100vh - 70rpx);
+  width: 100%;
+  margin-top: 20rpx;
+}
+.related_task{
+  width: 100%;
+  height: 60rpx;
+  border: 1rpx solid #f8f8f8;
+}
+.task_name{
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.iconfont{
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+.icon-xingzhuangjiehe{
+  color: #0aa3fa;
+}
+.icon-xuanzhong1{
+  color: #0aa3fa;
+}
+button{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  width: 50%;
+  position:fixed;
+  bottom: 0;
+  background: #ffffff;
+  border: 2rpx solid #f8f8f8;
+  border-radius: 0%;
+}
+.canel{
+  left: 0;
+}
+.sure{
+  right: 0;
+}

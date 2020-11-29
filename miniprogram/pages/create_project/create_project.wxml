@@ -1,0 +1,34 @@
+<!--miniprogram/pages/create_project/create_project.wxml-->
+<view class="Container">
+  <view class="project_title">
+    <input placeholder="请输入项目标题" maxlength="18" />
+  </view>
+  <view class="project">
+    <!-- 组件化 -->
+    <view class="principal">
+      <text>负责人:</text>
+      <input class="name" placeholder="未设置 >"/>
+    </view>
+    <view class="participant">
+      <text>参与人:</text>
+      <input class="name" placeholder="未设置 >"/>
+    </view>
+    <view class="Sharer">
+      <text>共享人:</text>
+      <input class="name" placeholder="未设置 >"/>
+    </view>
+    <view class="start_time">
+      <text>开始时间:</text>
+      <input class="time" placeholder="请选择开始日期 >"/>
+    </view>
+    <view class="ending_time">
+      <text>结束时间:</text>
+      <input class="time" placeholder="请选择结束日期 >"/>
+    </view>
+    <view class="classification">
+      <text>项目分类:</text>
+      <input class="label" placeholder="未设置 >"/>
+    </view>
+    <button>保存</button>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+/* miniprogram/pages/create_project/create_project.wxss */
+.Container{
+  height: 100%;
+  width: 100%;
+  background: #f8f8f8;
+}
+.project_title{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project .principal,
+.project .participant,
+.project .Sharer,
+.project .start_time,
+.project .ending_time,
+.project .classification{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  background: #ffffff;
+  border: 2rpx solid #fbfbfb;
+  position: relative;
+}
+.project .principal .name,
+.project .participant .name,
+.project .Sharer .name,
+.project .start_time .time,
+.project .ending_time .time,
+.project .classification .label {
+  display: inline;
+  position: absolute;
+  right: 0;
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: right;
+}
+.project .start_time .time,
+.project .ending_time .time{
+  width: 300rpx;
+}
+.project button{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 90%;
+  background: #d2d2d2;
+  font:#dbdbdb;
+  margin-top: 30rpx;
+}

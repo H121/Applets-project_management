@@ -1,0 +1,23 @@
+<!--miniprogram/pages/message/message.wxml-->
+<view class="Container">
+  <!-- 搜索框 -->
+  <search></search>
+  <!-- 留言板 -->
+  <scroll-view scroll-y class="projectContainer" >
+    <view class="item-list" wx:for="{{message}}" wx:for-item="item" wx:for-index="index" wx:key="that" >
+        <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" bindtap="toMessageDetail">
+            <image class="info-img" src="{{item.avatarUrl ? item.avatarUrl : '/static/images/nvsheng.jpg'}}"></image>
+            <view class="info-wrapper">
+                <view class="info-desc">
+                    <view class="name">{{item.name}}</view>
+                    <view class="time">{{item.time}}</view>
+                </view>
+                <view class="info-content">{{item.author}}</view>
+            </view>
+        </view>
+        <view class="item-oper">
+            <view class="oper-delete" bindtap="itemDelete" data-index="{{index}}">删除</view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

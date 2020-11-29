@@ -1,0 +1,69 @@
+<!--miniprogram/pages/create_task/create_task.wxml-->
+<view class="project_container">
+  <view class="project_title">
+    <input value="{{project_title}}" placeholder="请输入任务标题" maxlength="18" />
+  </view>
+  <view style="height:{{height}};background: #ffffff;"  bindtap="toEditor">
+    <text>无内容，点击这里可以添加任务详情</text>
+    <wxParse nodes="{{ html }}" wx:if="{{!toHtml}}" />
+  </view>
+  <view class="project_progress" >
+    <progress_bar id="progress" class="progress" currentProgress="{{ currentProgress }}" maxProgress="100" canSlide="{{canSlide}}"></progress_bar>
+  </view>
+  <view class="principal">
+    <text>负责人:</text>
+    <text class="name">{{principal}}</text>
+    <text class="symbol">></text>
+  </view>
+  <!-- 选填 -->
+  <view class="participant">
+    <text>参与人:</text>
+    <text class="name">{{participant}}</text>
+    <text class="symbol">></text>
+  </view>
+  <!-- 选填 -->
+  <view class="Sharer">
+    <text>共享人:</text>
+    <text class="name">{{Sharer}}</text>
+    <text class="symbol">></text>
+  </view>
+  <view class="start_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindStartTimeChange">
+      <text>起始日:</text>
+      <text class="time">{{start_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+  <view class="ending_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindEndingTimeChange">
+      <text>结束日:</text>
+      <text class="time">{{ending_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+    <!-- 选填 默认正常-->
+  <view class="emergency">
+    <text>紧急程度:</text>
+    <text class="name">{{emergency}}</text>
+    <text class="symbol">></text>
+  </view>
+    <!-- 选填 -->
+  <view class="type">
+    <text>任务类型:</text>
+    <text class="name">{{type}}</text>
+    <text class="symbol">></text>
+  </view>
+    <!-- 选填 -->
+  <view class="project_attachment">
+    <text>上传附件</text>
+    <text class="attachment">{{attachment}}</text>
+    <text class="symbol">></text>
+  </view>
+    <!-- 选填 -->
+  <view class="project_remind">
+    <text>提醒:</text>
+    <text class="remind">{{remind}}</text>
+    <text class="symbol">></text>
+  </view>
+  <button bindtap="toTaskDetail">保存</button>
+</view>

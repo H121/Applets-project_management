@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "progress_bar": "/components/progress_bar/progress_bar",
+    "wxParse": "/components/wxParse/wxParse"
+  },
+  "navigationBarTitleText": "任务详情"
+}

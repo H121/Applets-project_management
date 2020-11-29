@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/project/project",
+    "pages/message_detail/message_detail",
+    "pages/person_selection/person_selection",
+    "pages/project_detail/project_detail",
+    "pages/task_detail/task_detail",
+    "pages/create_task/create_task",
+    "pages/create_project/create_project",
+    "pages/task/task",
+    "pages/message/message",
+    "pages/setting/setting",
+    "pages/search/search",
+    "pages/editor/editor",
+    "pages/related_task/related_task"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "window": {
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "项目管理",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/project/project",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "我的项目"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "待办任务"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "留言"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "设置"
+      }
+    ]
+  }
+}

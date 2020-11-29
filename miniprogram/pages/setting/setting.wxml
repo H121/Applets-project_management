@@ -1,0 +1,11 @@
+<!--miniprogram/pages/setting/setting.wxml-->
+<view class="Container">
+  <!-- 登录 -->
+  <view class="userInfo">
+    <image src="{{avatarUrl}}"></image>
+    <text wx:if="{{logged}}"> {{ nickName }}</text>
+    <button wx:else disabled="{{ logged }}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >微信登录</button>
+  </view>
+
+  <!-- 回收站 -->
+</view>

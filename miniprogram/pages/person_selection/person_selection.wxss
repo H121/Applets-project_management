@@ -1,0 +1,91 @@
+/* miniprogram/pages/person_selection/person_selection.wxss */
+.Container{
+  width: 100%;
+  height: 100%;
+}
+.text{
+  width: 90rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+scroll-view{
+  height: 40rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  display: flex;
+  white-space: nowrap;
+}
+.selected{
+  width: 120rpx;
+  margin-left: 10rpx;
+}
+.selected image{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 100%;
+  margin-top: 5rpx;
+}
+.selected .name{
+  width: 90rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-left: 10rpx;
+  font-size: 26rpx;
+}
+.person_selectionContainer{
+  height: calc(100vh - 70rpx);
+  width: 100%;
+  margin-top: 20rpx;
+}
+.person_selection{
+  width: 100%;
+  height: 60rpx;
+  border: 1rpx solid #f8f8f8;
+}
+.person_selection image{
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 5rpx;
+  border-radius: 100%;
+}
+.person_selection .person_name{
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 5rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.iconfont{
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: right;
+}
+.icon-xingzhuangjiehe{
+  color: #0aa3fa;
+}
+.icon-xuanzhong1{
+  color: #0aa3fa;
+}
+
+button{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  width: 50%;
+  position:fixed;
+  bottom: 0;
+  background: #ffffff;
+  border: 2rpx solid #f8f8f8;
+  border-radius: 0%;
+}
+.canel{
+  left: 0;
+}
+.sure{
+  right: 0;
+}

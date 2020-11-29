@@ -1,0 +1,148 @@
+<!--miniprogram/pages/project_detail/project_detail.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--基本信息-->
+<view hidden="{{currentTab!==0}}" class="project_container">
+  <view class="project_title">
+    <text>项目标题</text>
+    <input value="{{project_title}}" maxlength="18" />
+  </view>
+  <view class="project_progress">
+    <text>项目进度:</text>
+    <text class="progress">{{progress}}</text>
+  </view>
+  <view class="project_photo">
+    <text>项目图标:</text>
+    <image src="{{project_photo}}"></image>
+    <text class="symbol" bindtap="project_photo">></text>
+  </view>
+  <text class="text">基本信息</text>
+  <!-- 组件化 -->
+  <view class="principal">
+    <text>负责人:</text>
+    <text class="name">{{principal}}</text>
+    <text class="symbol"bindtap="principal" >></text>
+  </view>
+  <view class="project_details">
+    <input placeholder="无详情" maxlength="20"/>
+  </view>
+  <!-- 显示附件 -->
+  <view class="project_attachment" wx:if="{{isAttachment}}" >
+    <text bindtap="open_file">{{file_name}}</text>
+    <text class="iconfont icon-gengduo">
+      <view class="extended_menu">
+        <button bindtap="related_task">下载</button>
+        <button>删除</button>
+      </view>
+    </text>
+  </view>
+  <!-- 需要做判断 wx:if -->
+  <view class="project_attachment">
+    <text>上传附件</text>
+    <text class="attachment">{{attachment}}</text>
+    <text class="symbol" bindtap="project_attachment">></text>
+  </view>
+  <view class="start_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindStartTimeChange">
+      <text>开始时间:</text>
+      <text class="time">{{start_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+  <view class="ending_time">
+    <picker mode="date" start="2020-11-16" end="2050-12-31" bindchange="bindEndingTimeChange">
+      <text>结束时间:</text>
+      <text class="time">{{ending_time}}</text>
+      <text class="symbol">></text>
+    </picker>
+  </view>
+  <view class="participant">
+    <text>参与人:</text>
+    <text class="name">{{participant}}</text>
+    <text class="symbol" bindtap="participant">></text>
+  </view>
+  <view class="project_remind">
+    <text>提醒:</text>
+    <text class="remind">{{remind}}</text>
+    <text class="symbol" bindtap="project_remind">></text>
+  </view>
+  <view class="classification">
+    <text>项目分类:</text>
+    <text class="label">{{classification}}</text>
+    <text class="symbol" bindtap="classification">></text>
+  </view>
+  <view class="Sharer">
+    <text>共享人:</text>
+    <text class="name">{{Sharer}}</text>
+    <text class="symbol" bindtap="Sharer">></text>
+  </view>
+  <view class="project_label">
+    <text>我的标签:</text>
+    <text class="label">{{project_label}}</text>
+    <text class="symbol" bindtap="project_label">></text>
+  </view>
+  <view class="public_label">
+    <text>公共标签:</text>
+    <text class="label">{{public_label}}</text>
+    <text class="symbol" bindtap="public_label">></text>
+  </view>
+  <text class="text">创建信息</text>
+  <view class="project_creation">
+    <text>创建人:</text>
+    <text class="name">{{project_creation}}</text>
+  </view>
+  <view class="project_time">
+      <text>创建时间:</text>
+      <text class="time">{{project_time}}</text>
+  </view>
+</view>
+
+ 
+<!--任务-->
+<view hidden="{{currentTab!==1}}" class="task_container">
+  <view class="taskContainer">
+    <swiper class="task" indicator-dots	>
+      <swiper-item>
+        <view>
+          <text>正在做</text>
+          <text class="iconfont icon-gengduo" bindtap="iconfontclick"></text>
+          <!-- 做判断 -->
+            <view class="extended_menu" wx:if="{{iconfontclick}}">
+              <button bindtap="related_task">关联任务</button>
+              <button>重命名</button>
+              <button>删除</button>
+            </view>
+        </view>
+        <!-- 做判断 -->
+        <text class="not_data">暂无数据</text>
+        <!-- 路由 -->
+        <button class="bottom_button" bindtap="create_task">+</button>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+ 
+<!-- 项目文档 -->
+<view hidden="{{currentTab!==2}}" class="documentContainer">
+  <scroll-view scroll-y class="documentContainer" >
+    <view class="item-list" wx:for="{{document_file}}" wx:for-item="item" wx:for-index="index" wx:key="that"  wx:if="{{isDocument}}">
+        <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" bindtap="toProjectDetail">
+            <image class="info-img" src="{{document_avatarUrl ? document_avatarUrl : '/static/images/nvsheng.jpg'}}"></image>
+            <view class="info-wrapper">
+                <view class="info-desc">
+                    <view class="name">{{item.name}}</view>
+                    <view class="time">{{document_createtime}}</view>
+                </view>
+                <view class="info-content">{{document_author}}</view>
+            </view>
+        </view>
+        <view class="item-oper">
+            <view class="oper-delete" bindtap="itemDelete" data-index="{{index}}">删除</view>
+        </view>
+    </view>
+  </scroll-view>
+  <button class="bottom_button" bindtap="add_document">+</button>
+</view>

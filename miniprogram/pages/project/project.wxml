@@ -1,0 +1,83 @@
+<!--miniprogram/pages/project/project.wxml-->
+<view class="Container">
+  <search>
+  <view class="animation-button select_button" bindtap="translate">筛选</view>
+  <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-element" animation="{{animation}}">
+      <view class='use'>
+        <view class='iconuse'>类型</view>
+        <ul class="useage">
+          <li class="{{currentTab=='0' ? 'active' : ''}}" bindtap="tryDriver" data-message="我的项目" data-index="0">我的项目</li>
+          <li class="{{currentTab==1 ? 'active' : ''}}" bindtap="tryDriver" data-message="负责的" data-index="1">负责的</li>
+          <li class="{{currentTab==2 ? 'active' : ''}}" bindtap="tryDriver" data-message="参与的" data-index="2">参与的</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{currentTab==3 ? 'active' : ''}}" bindtap="tryDriver" data-message="创建的" data-index="3">创建的</li>
+          <li class="{{currentTab==4 ? 'active' : ''}}" bindtap="tryDriver" data-message="关注的" data-index="4">关注的</li>
+          <li class="{{currentTab==5 ? 'active' : ''}}" bindtap="tryDriver" data-message="下属的" data-index="5">下属的</li>
+          <li class="{{currentTab==6 ? 'active' : ''}}" bindtap="tryDriver" data-message="共享给我的" data-index="6">共享给我的</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{currentTab==7 ? 'active' : ''}}" bindtap="tryDriver" data-message="已关闭" data-index="7">已关闭</li>
+          <li class="{{currentTab==8 ? 'active' : ''}}" bindtap="tryDriver" data-message="全部项目" data-index="8">全部项目</li>
+        </ul>
+      </view>
+    <view class="use">
+      <view class='iconuse'>
+        <text>项目分类</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>创建人或负责人</text>
+        <text class="symbol">></text>
+      </view>
+      <view class='iconuse'>
+        <text>标签</text>
+        <text class="symbol">></text>
+      </view>
+    </view>
+      <view class='use'>
+        <view class='iconprice'>排序</view>
+        <ul class="useage">
+          <li class="{{selectTab==0 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="默认" data-bar_index="0" >默认</li>
+          <li class="{{selectTab==1 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="反馈时间" data-bar_index="1" >反馈时间</li>
+          <li class="{{selectTab==2 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="更新时间" data-bar_index="2" >更新时间</li>
+        </ul>
+        <ul class="useage">
+          <li class="{{selectTab==3 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="创建时间" data-bar_index="3" >创建时间</li>
+          <li class="{{selectTab==4 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="结束时间" data-bar_index="4" >结束时间</li>
+          <li class="{{selectTab==5 ? 'active' : ''}}" bindtap="tryDrivers" data-messages="负责人" data-bar_index="5" >负责人</li>
+        </ul>
+      </view>
+      <view class='buttom'>
+      <view class="animation-reset" bindtap="reset">重置</view>
+      <view class="animation-button" bindtap="success">完成</view>
+      </view>
+    </view>
+  </view>
+  </search>
+  <!-- 项目展示 -->
+  <scroll-view  class="projectContainer"
+    scroll-y
+    refresher-enabled
+    bindscrolltoupper="handleRefresher"
+    bindscrolltolower="handleToLower" 
+    >
+    <view class="item-list" wx:for="{{project}}" wx:for-item="item" wx:for-index="index" wx:key="that" >
+        <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" bindtap="toProjectDetail">
+            <image class="info-img" src="{{item.avatarUrl ? item.avatarUrl : '/static/images/nvsheng.jpg'}}"></image>
+            <view class="info-wrapper">
+                <view class="info-desc">
+                    <view class="name">{{item.name}}</view>
+                    <view class="time">{{item.time}}</view>
+                </view>
+                <view class="info-content">{{item.author}}</view>
+            </view>
+        </view>
+        <view class="item-oper">
+            <view class="oper-delete" bindtap="itemDelete" data-index="{{index}}">删除</view>
+        </view>
+    </view>
+  </scroll-view>
+  <button class="bottom_button" bindtap="add_project">+</button>
+</view>

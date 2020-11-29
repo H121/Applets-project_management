@@ -1,0 +1,34 @@
+<!--components/tabBar/tabBar.wxml-->
+<!-- 底部导航 -->
+<view class='boxs_2'>
+  <view bindtap='Click_Bar' data-bar_index='{{0}}'>
+    <image src="" wx:if="{{bar_index==0}}"></image>
+    <image src="" wx:else></image>
+    <view class='{{bar_index==0?"view_selt":""}}'>
+      我的项目
+    </view>
+  </view>
+  
+  <view bindtap='Click_Bar' data-bar_index='{{1}}'>
+    <image src='' wx:if="{{bar_index==1}}"></image>
+    <image src='' wx:else></image>
+    <view class='{{bar_index==1?"view_selt":""}}'>
+      待办任务
+    </view>
+  </view>
+  <view bindtap='Click_Bar' data-bar_index='{{2}}'>
+    <image src='' wx:if="{{bar_index==2}}"></image>
+    <image src='' wx:else></image>
+    <view class='{{bar_index==2?"view_selt":""}}'>
+      留言
+    </view>
+  </view>
+
+  <view bindtap='Click_Bar' data-bar_index='{{3}}'>
+    <image src='' wx:if="{{bar_index==3}}"></image>
+    <image src='' wx:else></image>
+    <view class='{{bar_index==3?"view_selt":""}}'>
+      设置
+    </view>
+  </view>
+</view>
